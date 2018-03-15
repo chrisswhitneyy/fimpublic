@@ -1,0 +1,16 @@
+all:
+	ocamlbuild -pp "cppo -D NAT" -pkgs unix -Is Extraction/OCaml/Basic,Uncertified/OCaml/,Uncertified/OCaml/Basic fim_run.native
+	cp -L fim_run.native fim_basic_run
+	ocamlbuild -pp "cppo -D BIGINT" -pkgs unix,num -Is Extraction/OCaml/Integer,Uncertified/OCaml/,Uncertified/OCaml/Integer fim_run.native
+	cp -L fim_run.native fim_integer_run
+	ocamlbuild -pp "cppo" -pkgs unix -Is Extraction/OCaml/Int,Uncertified/OCaml/,Uncertified/OCaml/Int fim_run.native
+	cp -L fim_run.native fim_int_run
+
+
+clean:
+	make -C Extraction/OCaml/Basic clean
+	make -C Extraction/OCaml/Integer clean
+	make -C Extraction/OCaml/Int clean
+	find Extraction/OCaml -name "*.ml*" -delete
+	rm -f fim_basic_run fim_integer_run fim_int_run
+	ocamlbuild -clean

@@ -1,0 +1,20 @@
+-R .. SyDPaCC
+./Support/HasEqDec.v
+./Support/AOrder.v
+./Support/Le.v
+./Support/List.v
+./Support/Tree.v
+./SeqFIM.v
+
+./ParFIM.v
+./DataZoo.v
+./DataRetail1000.v
+./DataRetail2000.v
+./DataMushroom.v
+./PerfFIM.v
+Extraction/Haskell/Basic
+Extraction/Haskell/Integer
+Extraction/Haskell/Int
+Extraction/OCaml/Basic
+Extraction/OCaml/Integer
+Extraction/OCaml/Int 
